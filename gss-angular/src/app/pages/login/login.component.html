@@ -1,0 +1,50 @@
+<!-- login.component.html -->
+<div class="container d-flex align-items-center" style="height: 100vh;">
+  <div class="login-card mx-auto p-4">
+    <div class="icon-wrapper">
+      <i class="fas fa-user-circle login-icon"></i>
+    </div>
+
+    <h2 class="text-center mb-4">Connexion</h2>
+
+    <form (ngSubmit)="onSubmit()">
+      <!-- Nom d'utilisateur -->
+      <div class="mb-3">
+        <label for="username" class="form-label">Nom d'utilisateur</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-user"></i></span>
+          <input type="text"
+                 class="form-control"
+                 id="username"
+                 [(ngModel)]="username"
+                 name="username"
+                 placeholder="Entrez votre nom d'utilisateur"
+                 required>
+        </div>
+      </div>
+
+      <!-- Mot de passe -->
+      <div class="mb-4">
+        <label for="password" class="form-label">Mot de passe</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-lock"></i></span>
+          <input type="password"
+                 class="form-control"
+                 id="password"
+                 [(ngModel)]="password"
+                 name="password"
+                 placeholder="Entrez votre mot de passe"
+                 required>
+        </div>
+      </div>
+
+      <!-- Bouton de connexion -->
+      <button type="submit" name="sumit_btn" class="btn btn-custom w-100 py-2 mb-3">Se connecter</button>
+
+      <!-- Message d'erreur -->
+      <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </div>
+</div>

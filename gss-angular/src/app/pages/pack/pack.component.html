@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <h2>Gestion des Packs</h2>
+
+  <!-- Bouton pour afficher/masquer le formulaire -->
+  <button class="btn btn-primary mb-3" (click)="toggleForm()">
+    {{ showForm ? 'Masquer le formulaire' : 'Ajouter un pack' }}
+  </button>
+
+  <!-- Formulaire d'ajout de pack -->
+  <div *ngIf="showForm" class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Ajouter un pack</h5>
+      <form (ngSubmit)="addPack()">
+        <div class="form-group">
+          <label for="offerName">Nom de l'offre</label>
+          <input type="text" class="form-control" id="offerName" [(ngModel)]="newPack.offerName" name="offerName" required>
+        </div>
+        <div class="form-group">
+          <label for="duration">Durée (mois)</label>
+          <input type="number" class="form-control" id="duration" [(ngModel)]="newPack.duration" name="duration" required>
+        </div>
+        <div class="form-group">
+          <label for="monthlyPrice">Prix mensuel (€)</label>
+          <input type="number" class="form-control" id="monthlyPrice" [(ngModel)]="newPack.monthlyPrice" name="monthlyPrice" required>
+        </div>
+        <button type="submit" class="btn btn-success">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Tableau des packs -->
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Liste des Packs</h5>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom de l'offre</th>
+            <th scope="col">Durée (mois)</th>
+            <th scope="col">Prix mensuel (€)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pack of packs; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ pack.offerName }}</td>
+            <td>{{ pack.duration }}</td>
+            <td>{{ pack.monthlyPrice }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

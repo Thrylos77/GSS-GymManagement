@@ -1,0 +1,28 @@
+/* src/app/pages/customer/customer.component.scss */
+.customer {
+  padding: 1rem;
+}
+
+.btn-custom {
+  background-color: #764ba2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #5d3b7e;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
