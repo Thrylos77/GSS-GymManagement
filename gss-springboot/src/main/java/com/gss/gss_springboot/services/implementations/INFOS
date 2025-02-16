@@ -1,0 +1,18 @@
+             /*                                   
+                                                *** IMPORTANCE OF IMPLEMENTATION ***
+Separate interfaces and their implemententation enhance maintainability and facilitate incororationg new functionalities
+This approch fosters smoother changes and efficient behavior additions
+
+
+Il est très courant, surtout dans des projets de plus grande envergure, de séparer l'interface du service de son implémentation concrète. Cela permet notamment :
+
+    - Une meilleure séparation des responsabilités :
+    L'interface définit le contrat (les méthodes disponibles) sans imposer la manière dont elles sont réalisées. L'implémentation concrète se charge de la logique métier.
+
+    - Une flexibilité accrue :
+    Tu peux, par exemple, créer plusieurs implémentations de la même interface (pour des environnements différents, des tests, etc.) sans modifier le reste du code qui dépend de l'interface.
+
+    - Des tests facilitée :
+    Grâce à l'injection de dépendance basée sur l'interface, il est plus simple de créer des versions "mockées" de ton service lors des tests unitaires.
+
+    */
